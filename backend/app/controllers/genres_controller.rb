@@ -3,9 +3,7 @@ class GenresController < ApplicationController
 
   def index
     @genres = Genre.all
-    options = {}
-    options [:include] = [:songs]
-    render json: GenreSerializer.new(@genres, options)
+    render json: @genres
   end
 
   def show
