@@ -2,7 +2,9 @@ class GenresController < ApplicationController
   # before_action :set_genre, only: [:show, :update, :destroy]
 
   def index
-    genres = Genre.all
+    # genres = Genre.all
+    # preload the songs, to go into it once, instead of going again in db
+    genres = Genre.includes(:songs)
     render json: genres
   end
 

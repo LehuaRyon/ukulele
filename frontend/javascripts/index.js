@@ -1,5 +1,10 @@
 const songFormDiv = document.getElementById("song-form-div")
 const songForm = document.getElementById("song-form")
+const songTitle = document.getElementById("input-title")
+const songArtist = document.getElementById("input-artist")
+const songImage = document.getElementById("input-image")
+const songChords = document.getElementById("input-chords")
+const songGenre = document.getElementById("input-genre")
 const buttonDiv = document.getElementById("button-control")
 const buttonShowGenres = document.getElementById("button-show-genres")
 const ulListDiv = document.getElementById("list")
@@ -24,13 +29,13 @@ function showForm() {
         <input id="input-artist" type="text" name="artist" value="" placeholder="Artist name..." class="input-text">
         <br><br>
         <label for="image">Album Cover:</label>
-        <input id="input-url" type="text" name="image" value="" placeholder="Image URL..." class="input-text">
+        <input id="input-image" type="text" name="image" value="" placeholder="Image URL..." class="input-text">
         <br><br>
         <label for="link">Ukulele Chords:</label>
-        <input id="link-url" type="text" name="link" value="" placeholder="Tab URL..." class="input-text">
+        <input id="input-chords" type="text" name="link" value="" placeholder="Tab URL..." class="input-text">
         <br><br>
         <label for"genres">Choose a Genre:</label>
-        <select id="genre_id" name="genres">
+        <select id="input-genre" name="genres">
             <option value="" selected disabled hidden>Please Select</option>
             <option value="1">Pop</option>
             <option value="2">R&B</option>
@@ -79,7 +84,6 @@ function renderGenre(genre) {
     a.id = `genre-${genre.id}`
     a.innerText = genre.name
     a.href = "#"
-    a.alt = `${genre.name}`
     a.addEventListener("click", (e) => renderSongs(e, genre))
     h2.appendChild(a)
     ul.appendChild(h2)
@@ -116,7 +120,27 @@ function renderSong(song, genreId) {
 }
 
 function handleSubmitSongForm() {
-
+    e.preventDefault()
+    // packaged data I need:
+    const songObject = {
+        title: songTitle.value,
+        artist: songArtist.value,
+        image: songImage.value,
+        chords: songChords.value,
+        genre_id: songGenre.value
+    }
+    // where to send data and how:
+    // const configObj = {}
+    fetch(`${BASE_URL}/songs`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": 'application/json'
+        }
+        // json class has method of stringify
+        body: JSON.stringify(songObject)
+    })
+    .then(resp => resp.json())
+    .then(json => handleCreateSong(json))
 }
 
 function handleError(error) {
