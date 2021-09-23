@@ -74,13 +74,24 @@ function renderGenres(genres) {
 }
 
 function renderGenre(genre) {
-    const h4 = document.createElement("h4")
+    const h2 = document.createElement("h2")
     const a = document.createElement("a")
     a.id = `genre-${genre.id}`
     a.innerText = genre.name
     a.href = "#"
     a.alt = `${genre.name}`
-    a.addEventListener("click", (e) => fetchSongs(e, genre))
-    h4.appendChild(a)
-    ul.appendChild(h4)
+    a.addEventListener("click", (e) => renderSongs(e, genre))
+    h2.appendChild(a)
+    ul.appendChild(h2)
+}
+
+function renderSongs(e, genre) {
+    const nextLiSibling = e.target.nextSibling
+    if (nextLiSibling) {
+        const children = Array.from(e.target.parentNode.children)
+        const lis = children.slice(1)
+        lis.forEach((li) => li.remove())
+    } else {
+        genre.songs.forEach(song => renderSong(song, genre.id));
+    }
 }
