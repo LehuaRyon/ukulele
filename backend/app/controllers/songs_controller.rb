@@ -31,7 +31,11 @@ class SongsController < ApplicationController
 
   def destroy
     song = Song.find(params[:id])
-    song.destroy
+    if song.destroy
+      render json: {message: "Song '#{song.title}' successfully deleted!"}
+    else
+      render json: {message: "Song was unable to delete! Errors: #{song.errors.full_messages}"}
+    end
   end
 
   private

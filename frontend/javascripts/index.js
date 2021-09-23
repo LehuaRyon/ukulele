@@ -96,6 +96,7 @@ function renderGenre(genre) {
 function renderSongs(e, genre) {
     const nextLiSibling = e.target.nextSibling
     if (nextLiSibling) {
+        // logic for toggling
         const children = Array.from(e.target.parentNode.children)
         const lis = children.slice(1)
         lis.forEach((li) => li.remove())
@@ -122,6 +123,9 @@ function renderSong(song, genreId) {
     <br><br>
     `
     a.parentNode.appendChild(li)
+    // advantage of dataset attributes are quick way to set important info on elements
+    const deleteButton = document.querySelector(`button.delete-button[data-id='${song.id}']`)
+    deleteButton.addEventListener("click", (e) => handleDeleteSong(e))
 }
 
 function handleSubmitSongForm(e) {
@@ -161,6 +165,23 @@ function handleCreateSong(song) {
     songForm.reset()
 }
 
-// function handleError(error) {
+function handleDeleteSong(e) {
+    // debugger
+    fetch(`${BASE_URL}/songs/${e.target.dataset.id}`, {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": 'application/json'
+        }
+    })
+    .then(resp => resp.json())
+    .then(json => {
+        // pessemistic - check to see if request worked before doing something on page
+        // optomistic - first do it, then make sure page works
+        e.target.parentNode.remove()
+        alert(json.message)
+    })
+}
 
+// function handleError(error) {
+//     console.log(error)
 // }
