@@ -67,3 +67,22 @@ function fetchGenres() {
     .catch(handleError)
 }
 
+function renderGenres(genres) {
+    ul.innerHTML += `<h1 id='genres-header'>Genres</h1>`
+    genres.forEach(genre => renderGenre(genre));
+}
+
+// function renderGenre(genre) {
+//     let newGenre = new Genre(genre, genre.attributes)
+//     // debugger
+//     const ul = document.getElementById("genres-list")
+//     const h4 = document.createElement("h4")
+//     const a = document.createElement("a")
+//     a.id = `${newGenre.id}`
+//     a.innerText = newGenre.name
+//     a.href = "#"
+//     a.alt = `${newGenre.name}`
+//     a.addEventListener("click", (e) => fetchSongs(e, newGenre))
+//     h4.appendChild(a)
+//     ul.appendChild(h4)
+// }
