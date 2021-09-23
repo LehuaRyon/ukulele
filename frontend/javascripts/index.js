@@ -95,3 +95,22 @@ function renderSongs(e, genre) {
         genre.songs.forEach(song => renderSong(song, genre.id));
     }
 }
+
+function renderSong(song, genreId) {
+    const a = document.getElementById(`genre-${genreId}`)
+    const li = document.createElement("li")
+    a.dataset.genreId = genreId
+    li.innerHTML = `
+    <img class="card-img" src=${song.image} height="200" width="250">
+    <br>
+    <strong class="card-title">${song.title}</strong>
+    <br>
+    <span class="card-artist">${song.artist}</span>
+    <br>
+    <a class="card-link" href=${song.chords}>Ukulele Chords</a>
+    <br>
+    <button class="edit-button" data-id="${song.id}">Edit</button>
+    <button class="delete-button" data-id="${song.id}">Delete</button>
+    `
+    a.parentNode.appendChild(li)
+}
