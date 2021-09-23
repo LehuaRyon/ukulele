@@ -94,6 +94,16 @@ function renderGenre(genre) {
 }
 
 function renderSongs(e, genre) {
+    // const nextLiSibling = e.target.nextSibling
+    // if (nextLiSibling) {
+    //     // logic for toggling
+    //     const children = Array.from(e.target.parentNode.children)
+    //     const lis = children.slice(1)
+    //     lis.forEach((li) => li.remove())
+    // } else {
+    //     genre.songs.forEach(song => renderSong(song, genre.id));
+    // }
+
     const nextLiSibling = e.target.nextSibling
     if (nextLiSibling) {
         // logic for toggling
@@ -178,6 +188,9 @@ function handleDeleteSong(e) {
         // pessemistic - check to see if request worked before doing something on page
         // optomistic - first do it, then make sure page works
         e.target.parentNode.remove()
+        debugger
+        window.location.reload()
+        // # it deletes it, however, when  toggle off and on again still shows it
         alert(json.message)
     })
 }
