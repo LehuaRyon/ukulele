@@ -108,7 +108,7 @@ function renderSong(song, genreId) {
     const a = document.getElementById(`genre-${genreId}`)
     const li = document.createElement("li")
     a.dataset.genreId = genreId
-    li.innerHTML += `
+    li.innerHTML = `
     <img class="card-img" src=${song.image} height="200" width="250">
     <br>
     <strong class="card-title">${song.title}</strong>
@@ -119,6 +119,7 @@ function renderSong(song, genreId) {
     <br>
     <button class="edit-button" data-id="${song.id}">Edit</button>
     <button class="delete-button" data-id="${song.id}">Delete</button>
+    <br><br>
     `
     a.parentNode.appendChild(li)
 }
@@ -156,6 +157,8 @@ function handleCreateSong(song) {
     // genres on page first
     // prepare new song and append to page
     renderSong(song, song.genre.id)
+    const songForm = document.getElementById("song-form")
+    songForm.reset()
 }
 
 // function handleError(error) {
