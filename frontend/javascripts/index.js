@@ -114,3 +114,11 @@ function renderSong(song, genreId) {
     `
     a.parentNode.appendChild(li)
 }
+
+function handleSubmitSongForm() {
+
+}
+
+function handleError(error) {
+
+}

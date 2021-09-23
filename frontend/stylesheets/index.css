@@ -1,0 +1,10 @@
+html {
+    background: linear-gradient(200deg, rgb(245, 115, 28), rgb(233, 203, 72));
+    background-attachment: fixed;
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    padding: 1rem 1 rem 2 rem 1 rem;
+}
