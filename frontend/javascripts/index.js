@@ -1,10 +1,11 @@
 const songFormDiv = document.getElementById("song-form-div")
-const songForm = document.getElementById("song-form")
-const songTitle = document.getElementById("input-title")
-const songArtist = document.getElementById("input-artist")
-const songImage = document.getElementById("input-image")
-const songChords = document.getElementById("input-chords")
-const songGenre = document.getElementById("input-genre")
+// why is songForm & variables listed below = null when declared here:
+// const songForm = document.getElementById("song-form")
+// const songTitle = document.getElementById("input-title")
+// const songArtist = document.getElementById("input-artist")
+// const songImage = document.getElementById("input-image")
+// const songChords = document.getElementById("input-chords")
+// const songGenre = document.getElementById("input-genre")
 const buttonDiv = document.getElementById("button-control")
 const buttonShowGenres = document.getElementById("button-show-genres")
 const ulListDiv = document.getElementById("list")
@@ -63,7 +64,10 @@ function showForm() {
         <br><br>
     </form>
     `
-    songForm.addEventListener("submit", handleSubmitSongForm)
+    // debugger
+    // songFormDiv.firstElementChild.addEventListener("submit", (e) => handleSubmitSongForm(e))
+    const songForm = document.getElementById("song-form")
+    songForm.addEventListener("submit", (e) => handleSubmitSongForm(e))
 }
 
 function fetchGenres() {
@@ -104,7 +108,7 @@ function renderSong(song, genreId) {
     const a = document.getElementById(`genre-${genreId}`)
     const li = document.createElement("li")
     a.dataset.genreId = genreId
-    li.innerHTML = `
+    li.innerHTML += `
     <img class="card-img" src=${song.image} height="200" width="250">
     <br>
     <strong class="card-title">${song.title}</strong>
@@ -119,8 +123,13 @@ function renderSong(song, genreId) {
     a.parentNode.appendChild(li)
 }
 
-function handleSubmitSongForm() {
+function handleSubmitSongForm(e) {
     e.preventDefault()
+    const songTitle = document.getElementById("input-title")
+    const songArtist = document.getElementById("input-artist")
+    const songImage = document.getElementById("input-image")
+    const songChords = document.getElementById("input-chords")
+    const songGenre = document.getElementById("input-genre")
     // packaged data I need:
     const songObject = {
         title: songTitle.value,
@@ -135,7 +144,7 @@ function handleSubmitSongForm() {
         method: 'POST',
         headers: {
             "Content-Type": 'application/json'
-        }
+        },
         // json class has method of stringify
         body: JSON.stringify(songObject)
     })
@@ -143,6 +152,12 @@ function handleSubmitSongForm() {
     .then(json => handleCreateSong(json))
 }
 
-function handleError(error) {
-
+function handleCreateSong(song) {
+    // genres on page first
+    // prepare new song and append to page
+    renderSong(song, song.genre.id)
 }
+
+// function handleError(error) {
+
+// }
