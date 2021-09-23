@@ -7,6 +7,7 @@ const ul = document.getElementById("genres-list")
 const BASE_URL = "http://localhost:3000/"
 
 document.addEventListener("DOMContentLoaded", () => {
+    // showForm()
     fetchGenres()
     showForm()
 })
@@ -64,7 +65,7 @@ function fetchGenres() {
     fetch(`${BASE_URL}/genres`)
     .then(resp => resp.json())
     .then(json => renderGenres(json))
-    .catch(handleError)
+    // .catch(handleError)
 }
 
 function renderGenres(genres) {
@@ -72,17 +73,14 @@ function renderGenres(genres) {
     genres.forEach(genre => renderGenre(genre));
 }
 
-// function renderGenre(genre) {
-//     let newGenre = new Genre(genre, genre.attributes)
-//     // debugger
-//     const ul = document.getElementById("genres-list")
-//     const h4 = document.createElement("h4")
-//     const a = document.createElement("a")
-//     a.id = `${newGenre.id}`
-//     a.innerText = newGenre.name
-//     a.href = "#"
-//     a.alt = `${newGenre.name}`
-//     a.addEventListener("click", (e) => fetchSongs(e, newGenre))
-//     h4.appendChild(a)
-//     ul.appendChild(h4)
-// }
+function renderGenre(genre) {
+    const h4 = document.createElement("h4")
+    const a = document.createElement("a")
+    a.id = `genre-${genre.id}`
+    a.innerText = genre.name
+    a.href = "#"
+    a.alt = `${genre.name}`
+    a.addEventListener("click", (e) => fetchSongs(e, genre))
+    h4.appendChild(a)
+    ul.appendChild(h4)
+}
