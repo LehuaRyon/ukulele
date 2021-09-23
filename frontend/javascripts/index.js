@@ -4,9 +4,10 @@ const buttonDiv = document.getElementById("button-control")
 const buttonShowGenres = document.getElementById("button-show-genres")
 const ulListDiv = document.getElementById("list")
 const ul = document.getElementById("genres-list")
+const BASE_URL = "http://localhost:3000/"
 
 document.addEventListener("DOMContentLoaded", () => {
-    // buttonShowGenres.addEventListener("click", fetchGenres)
+    fetchGenres()
     showForm()
 })
 
@@ -56,5 +57,13 @@ function showForm() {
         <br><br>
     </form>
     `
-    songForm.addEventListener('submit', handleSubmitSongForm)
+    songForm.addEventListener("submit", handleSubmitSongForm)
 }
+
+function fetchGenres() {
+    fetch(`${BASE_URL}/genres`)
+    .then(resp => resp.json())
+    .then(json => renderGenres(json))
+    .catch(handleError)
+}
+
