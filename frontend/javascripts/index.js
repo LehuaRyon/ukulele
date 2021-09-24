@@ -182,7 +182,8 @@ function handleCreateSong(song) {
 
 function handleDeleteSong(e) {
     // debugger
-    fetch(`${BASE_URL}/songs/${e.target.dataset.id}`, {
+    songId = parseInt(e.target.dataset.id)
+    fetch(`${BASE_URL}/songs/${songId}`, {
         method: 'DELETE',
         headers: {
             "Content-Type": 'application/json'
