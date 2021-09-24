@@ -60,7 +60,7 @@ function showForm() {
             <option value="20">New Age</option>
         </select>
         <br><br>
-        <input id="create-button" type="submit" value="Add Song" class="submit">
+        <input id="create-button" type="submit" value="Submit Song" class="submit">
         <br><br>
     </form>
     `
@@ -223,12 +223,13 @@ function handleEditSong(e) {
         const genreValue = document.getElementById("input-genre")
         genreValue.value = genreContent
         // debugger
+        window.scrollTo(0, 0)
 
-        const id = e.target.dataset.id
+        const songId = e.target.dataset.id
         formButton = document.getElementById("create-button")
         formButton.addEventListener('click', (e) => {
             e.preventDefault()
-            fetch(`${BASE_URL}/songs/${id}`, {
+            fetch(`${BASE_URL}/songs/${songId}`, {
                 method: "PATCH",
                 headers: {"Content-Type": "application/json"
             },
