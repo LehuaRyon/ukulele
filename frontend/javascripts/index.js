@@ -120,13 +120,13 @@ function renderSong(song, genreId) {
     const li = document.createElement("li")
     a.dataset.genreId = genreId
     li.innerHTML = `
-    <img class="card-img" src=${song.image} height="200" width="250">
+    <img class="card-image" src=${song.image} height="200" width="250">
     <br>
     <strong class="card-title">${song.title}</strong>
     <br>
     <span class="card-artist">${song.artist}</span>
     <br>
-    <a class="card-link" href=${song.chords}>Ukulele Chords</a>
+    <a class="card-chords" href=${song.chords}>Ukulele Chords</a>
     <br>
     <button class="edit-button" data-id="${song.id}">Edit</button>
     <button class="delete-button" data-id="${song.id}">Delete</button>
@@ -136,6 +136,9 @@ function renderSong(song, genreId) {
     // advantage of dataset attributes are quick way to set important info on elements
     const deleteButton = document.querySelector(`button.delete-button[data-id='${song.id}']`)
     deleteButton.addEventListener("click", (e) => handleDeleteSong(e))
+
+    const editButton = document.querySelector(`button.edit-button[data-id='${song.id}']`)
+    editButton.addEventListener("click", (e) => handleEditSong(e))
 }
 
 function handleSubmitSongForm(e) {
@@ -193,6 +196,52 @@ function handleDeleteSong(e) {
         // # it deletes it, however, when  toggle off and on again still shows it
         alert(json.message)
     })
+}
+
+function handleEditSong(e) {
+    const li = e.target.parentNode
+    // debugger
+        let titleContent = li.querySelector(".card-title").textContent
+        const titleValue = document.getElementById("input-title")
+        titleValue.value = titleContent
+    
+        let artistContent = li.querySelector(".card-artist").textContent
+        const artistValue = document.getElementById("input-artist")
+        artistValue.value = artistContent
+        // debugger
+        let imageContent = li.querySelector(".card-image").src
+        const imageValue = document.getElementById("input-image")
+        imageValue.value = imageContent
+        
+        let chordsContent = li.querySelector(".card-chords").href
+        const chordsValue = document.getElementById("input-chords")
+        chordsValue.value = chordsContent
+        // debugger
+        let genreContent = e.target.parentNode.parentNode.firstElementChild.dataset.genreId
+        const genreValue = document.getElementById("input-genre")
+        genreValue.value = genreContent
+        // debugger
+
+        const id = e.target.dataset.id
+        formButton = document.getElementById("create-button")
+        formButton.addEventListener('click', (e) => {
+            e.preventDefault()
+            fetch(`${BASE_URL}/songs/${id}`, {
+                method: "PATCH",
+                headers: {"Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: titleValue.value,
+                artist: artistValue.value,
+                image: imageValue.value,
+                chords: chordsValue.value,
+                genre_id: genreValue.value
+            })
+        })
+                .then(resp => resp.json())
+                .then(() => location.reload(), )
+        })        
+        
 }
 
 // function handleError(error) {
