@@ -87,23 +87,16 @@ function renderGenre(genre) {
     const a = document.createElement("a")
     a.id = `genre-${genre.id}`
     a.innerText = genre.name
-    a.href = "#"
+    // a.href = "#"
+    a.href = "javascript:void(0)"
+    // instead of #, this way the page does not scroll to top when genre is clicked
     a.addEventListener("click", (e) => renderSongs(e, genre))
     h2.appendChild(a)
     ul.appendChild(h2)
 }
 
 function renderSongs(e, genre) {
-    // const nextLiSibling = e.target.nextSibling
-    // if (nextLiSibling) {
-    //     // logic for toggling
-    //     const children = Array.from(e.target.parentNode.children)
-    //     const lis = children.slice(1)
-    //     lis.forEach((li) => li.remove())
-    // } else {
-    //     genre.songs.forEach(song => renderSong(song, genre.id));
-    // }
-
+    // debugger
     const nextLiSibling = e.target.nextSibling
     if (nextLiSibling) {
         // logic for toggling
@@ -111,6 +104,7 @@ function renderSongs(e, genre) {
         const lis = children.slice(1)
         lis.forEach((li) => li.remove())
     } else {
+        // debugger
         genre.songs.forEach(song => renderSong(song, genre.id));
     }
 }
@@ -258,4 +252,4 @@ function handleEditSong(e) {
 //     console.log(error)
 // }
 
-// the toggle of a genre is not updating the changes of edit song or delete song
+// the toggle of a genre is not updating the changes of create, edit song or delete song
