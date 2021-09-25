@@ -244,17 +244,18 @@ function handleEditSong(e) {
                 .then(resp => resp.json())
                 .then(json => {
                     // debugger
-                    renderSong(json, json.genre.id)
-                    // debugger
-                    // e.target.parentNode.remove()
+                    handleCreateSong(json)
                 })
                 // .then(() => location.reload(), )
                 // debugger
         })
-        // deletes song from last genre location        
+        // deletes song from last genre location
+        // defined above: const li = e.target.parentNode        
         li.remove()
 }
 
 // function handleError(error) {
 //     console.log(error)
 // }
+
+// the toggle of a genre is not updating the changes of edit song or delete song
