@@ -1,0 +1,13 @@
+const songFormDiv = document.getElementById("song-form-div")
+// why is songForm & variables listed below = null when declared here:
+// const songForm = document.getElementById("song-form")
+// const songTitle = document.getElementById("input-title")
+// const songArtist = document.getElementById("input-artist")
+// const songImage = document.getElementById("input-image")
+// const songChords = document.getElementById("input-chords")
+// const songGenre = document.getElementById("input-genre")
+const buttonDiv = document.getElementById("button-control")
+const buttonShowGenres = document.getElementById("button-show-genres")
+const ulListDiv = document.getElementById("list")
+const ul = document.getElementById("genres-list")
+const BASE_URL = "http://localhost:3000/"
