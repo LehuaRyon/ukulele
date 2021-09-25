@@ -24,6 +24,7 @@ class SongsController < ApplicationController
     song = Song.find(params[:id])
     if song.update(song_params)
       render json: song
+      # render json: song, {message: "Song '#{song.title}' successfully updated!"}
     else
       render json: song.errors, status: :unprocessable_entity
     end

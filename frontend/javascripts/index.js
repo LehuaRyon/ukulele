@@ -176,8 +176,8 @@ function handleCreateSong(song) {
     renderSong(song, song.genre.id)
     const songForm = document.getElementById("song-form")
     songForm.reset()
-    window.location.reload()
-    // without this, it would toggle and now show newly added song
+    // window.location.reload()
+    // without this, it toggles and does not show newly added song
 }
 
 function handleDeleteSong(e) {
@@ -194,9 +194,9 @@ function handleDeleteSong(e) {
         // pessemistic - check to see if request worked before doing something on page
         // optomistic - first do it, then make sure page works
         e.target.parentNode.remove()
-        // # it deletes it, however, when  toggle off and on again still shows it, good now
+        // it deletes it, however, when  toggle off and on again still shows it
         alert(json.message)
-        window.location.reload()
+        // window.location.reload()
     })
 }
 
@@ -242,9 +242,17 @@ function handleEditSong(e) {
             })
         })
                 .then(resp => resp.json())
-                .then(() => location.reload(), )
-        })        
-        
+                .then(json => {
+                    // debugger
+                    renderSong(json, json.genre.id)
+                    // debugger
+                    // e.target.parentNode.remove()
+                })
+                // .then(() => location.reload(), )
+                // debugger
+        })
+        // deletes song from last genre location        
+        li.remove()
 }
 
 // function handleError(error) {
