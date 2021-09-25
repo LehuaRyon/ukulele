@@ -170,6 +170,7 @@ function handleCreateSong(song) {
     renderSong(song, song.genre.id)
     const songForm = document.getElementById("song-form")
     songForm.reset()
+    // debugger
     // window.location.reload()
     // without this, it toggles and does not show newly added song
 }
@@ -240,6 +241,7 @@ function handleEditSong(e) {
                     // debugger
                     handleCreateSong(json)
                 })
+                // .catch(error => alert(error))
                 // .then(() => location.reload(), )
                 // debugger
         })
@@ -253,3 +255,4 @@ function handleEditSong(e) {
 // }
 
 // the toggle of a genre is not updating the changes of create, edit song or delete song
+    // should i just take away toggling feature completely to avoid this?

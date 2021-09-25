@@ -8,3 +8,7 @@ html {
 body {
     padding: 1rem 1 rem 2 rem 1 rem;
 }
+
+.hide {
+    display: none;
+}
