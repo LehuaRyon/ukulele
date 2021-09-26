@@ -2,6 +2,7 @@ class Genre {
     static all = []
 
     constructor({name, id, songs = []}){
+        // destructure arguments
         this.name = name
         this.id = id
         this.songs = songs
@@ -15,11 +16,15 @@ class Genre {
 
     static findByName(name) {
         // this.all.find(function(genre) {genre.name === name})
-        this.all.find(genre => genre.name === name)
+        return this.all.find(genre => genre.name === name)
     }
 
     static findById(id) {
         // this.all.find(function(genre) {genre.name === name})
-        this.all.find(id => genre.id === id)
+        return this.all.find(id => genre.id === id)
+    }
+
+    static findOrCreateBy(genre) {
+        return this.findByName(genre.name) || new Genre(genre)
     }
 }
