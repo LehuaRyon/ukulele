@@ -8,6 +8,7 @@ class GenreApi {
         // .then(json => {debugger})
         .then(json => json.forEach(genre => Genre.findOrCreateBy(genre)))
         // .catch(handleError)
+    
         // Genre.renderGenres()
     }
 

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // fetchGenres()
     GenreApi.fetchGenres()
     Genre.renderGenres()
+
     showForm()
 })
 
@@ -81,6 +82,7 @@ function showForm() {
 //     h2.appendChild(a)
 //     ul.appendChild(h2)
 // }
+
 
 function renderSongs(e, genre) {
     // debugger
