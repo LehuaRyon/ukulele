@@ -10,7 +10,7 @@ class Genre {
     }
 
     // class method
-    static retrieveAll {
+    static retrieveAll() {
         return this.all
     }
 
@@ -28,7 +28,30 @@ class Genre {
         return this.findByName(genre.name) || new Genre(genre)
     }
 
+    // static renderGenres(genres) {
     static renderGenres() {
-        
+        ul.innerHTML += `<h1 id='genres-header'>Genres</h1>`
+        // debugger
+        this.all.forEach(genre => this.renderGenre(genre));
+        // dont forget the reciever of the function, Genre
+    }
+
+    static renderGenre(genre) {
+        // debugger
+        const h2 = document.createElement("h2")
+        const a = document.createElement("a")
+        a.id = `genre-${genre.id}`
+        a.innerText = genre.name
+        // a.href = "#"
+        a.href = "javascript:void(0)"
+        // instead of #, this way the page does not scroll to top when genre is clicked
+        a.addEventListener("click", (e) => renderSongs(e, genre))
+        h2.appendChild(a)
+        ul.appendChild(h2)
+    }
+
+    // for each genre, render the songs = instance
+    renderSongs(genre) {
+        return genre
     }
 }

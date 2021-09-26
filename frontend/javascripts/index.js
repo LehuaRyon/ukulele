@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // fetchGenres()
     GenreApi.fetchGenres()
+    Genre.renderGenres()
     showForm()
 })
 
@@ -63,23 +64,23 @@ function showForm() {
 //     // .catch(handleError)
 // }
 
-function renderGenres(genres) {
-    ul.innerHTML += `<h1 id='genres-header'>Genres</h1>`
-    genres.forEach(genre => renderGenre(genre));
-}
+// function renderGenres(genres) {
+//     ul.innerHTML += `<h1 id='genres-header'>Genres</h1>`
+//     genres.forEach(genre => renderGenre(genre));
+// }
 
-function renderGenre(genre) {
-    const h2 = document.createElement("h2")
-    const a = document.createElement("a")
-    a.id = `genre-${genre.id}`
-    a.innerText = genre.name
-    // a.href = "#"
-    a.href = "javascript:void(0)"
-    // instead of #, this way the page does not scroll to top when genre is clicked
-    a.addEventListener("click", (e) => renderSongs(e, genre))
-    h2.appendChild(a)
-    ul.appendChild(h2)
-}
+// function renderGenre(genre) {
+//     const h2 = document.createElement("h2")
+//     const a = document.createElement("a")
+//     a.id = `genre-${genre.id}`
+//     a.innerText = genre.name
+//     // a.href = "#"
+//     a.href = "javascript:void(0)"
+//     // instead of #, this way the page does not scroll to top when genre is clicked
+//     a.addEventListener("click", (e) => renderSongs(e, genre))
+//     h2.appendChild(a)
+//     ul.appendChild(h2)
+// }
 
 function renderSongs(e, genre) {
     // debugger
