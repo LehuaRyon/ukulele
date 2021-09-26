@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // showForm()
-    fetchGenres()
+    // fetchGenres()
+    GenreApi.fetchGenres()
     showForm()
 })
 
@@ -56,12 +56,12 @@ function showForm() {
     songForm.addEventListener("submit", (e) => handleSubmitSongForm(e))
 }
 
-function fetchGenres() {
-    fetch(`${BASE_URL}/genres`)
-    .then(resp => resp.json())
-    .then(json => renderGenres(json))
-    // .catch(handleError)
-}
+// function fetchGenres() {
+//     fetch(`${BASE_URL}/genres`)
+//     .then(resp => resp.json())
+//     .then(json => renderGenres(json))
+//     // .catch(handleError)
+// }
 
 function renderGenres(genres) {
     ul.innerHTML += `<h1 id='genres-header'>Genres</h1>`
@@ -235,10 +235,6 @@ function handleEditSong(e) {
         // defined above: const li = e.target.parentNode        
         li.remove()
 }
-
-// function handleError(error) {
-//     console.log(error)
-// }
 
 // the toggle of a genre is not updating the changes of create, edit song or delete song
     // should i just take away toggling feature completely to avoid this?

@@ -5,4 +5,8 @@ class GenreApi {
         .then(json => renderGenres(json))
         // .catch(handleError)
     }
+
+    // static handleError(error) {
+    //     console.log(error)
+    // }
 }
