@@ -27,4 +27,8 @@ class Genre {
     static findOrCreateBy(genre) {
         return this.findByName(genre.name) || new Genre(genre)
     }
+
+    static renderGenres() {
+        
+    }
 }
