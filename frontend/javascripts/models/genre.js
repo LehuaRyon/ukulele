@@ -12,4 +12,14 @@ class Genre {
     static retrieveAll {
         return this.all
     }
+
+    static findByName(name) {
+        // this.all.find(function(genre) {genre.name === name})
+        this.all.find(genre => genre.name === name)
+    }
+
+    static findById(id) {
+        // this.all.find(function(genre) {genre.name === name})
+        this.all.find(id => genre.id === id)
+    }
 }
