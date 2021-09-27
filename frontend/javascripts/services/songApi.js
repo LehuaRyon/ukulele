@@ -67,6 +67,12 @@ class SongApi {
             // optomistic - first do it, then make sure page works
             e.target.parentNode.remove()
             // it deletes it, however, when  toggle off and on again still shows it
+            // debugger
+            const song = Song.findById(parseInt(e.target.dataset.id))
+            const songLocationInAll = Song.all.indexOf(song)
+            // remove the song from collection of all
+            // splice(start, deleteCount, item) - modifies content of Array
+            Song.all.splice(songLocationInAll, 1)
             alert(json.message)
             // window.location.reload()
         })

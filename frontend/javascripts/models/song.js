@@ -23,7 +23,7 @@ class Song {
 
     static findById(id) {
         // this.all.find(function(song) {song.id === id})
-        return this.all.find(id => song.id === id)
+        return this.all.find(song => song.id === id)
     }
 
     static findOrCreateBy(song) {
