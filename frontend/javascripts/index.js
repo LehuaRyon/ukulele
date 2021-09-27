@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // fetchGenres()
     GenreApi.fetchGenres()
-    // Genre.renderGenres()
     showForm()
 })
 

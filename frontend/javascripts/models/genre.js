@@ -35,16 +35,30 @@ class Genre {
         // dont forget the reciever of the function, Genre
     // }
 
-    static renderGenre(genre) {
+    // static renderGenre(genre) {
+    //     // debugger
+    //     const h2 = document.createElement("h2")
+    //     const a = document.createElement("a")
+    //     a.id = `genre-${genre.id}`
+    //     a.innerText = genre.name
+    //     // a.href = "#"
+    //     a.href = "javascript:void(0)"
+    //     // instead of #, this way the page does not scroll to top when genre is clicked
+    //     a.addEventListener("click", (e) => renderSongs(e, genre))
+    //     h2.appendChild(a)
+    //     ul.appendChild(h2)
+    // }
+
+    renderGenre() {
         // debugger
         const h2 = document.createElement("h2")
         const a = document.createElement("a")
-        a.id = `genre-${genre.id}`
-        a.innerText = genre.name
+        a.id = `genre-${this.id}`
+        a.innerText = this.name
         // a.href = "#"
         a.href = "javascript:void(0)"
         // instead of #, this way the page does not scroll to top when genre is clicked
-        a.addEventListener("click", (e) => renderSongs(e, genre))
+        a.addEventListener("click", (e) => renderSongs(e, this))
         h2.appendChild(a)
         ul.appendChild(h2)
     }
