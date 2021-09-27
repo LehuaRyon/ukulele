@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // fetchGenres()
     GenreApi.fetchGenres()
+    SongApi.fetchSongs()
     showForm()
 })
 

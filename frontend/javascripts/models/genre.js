@@ -20,7 +20,7 @@ class Genre {
     }
 
     static findById(id) {
-        // this.all.find(function(genre) {genre.name === name})
+        // this.all.find(function(genre) {genre.id === id})
         return this.all.find(id => genre.id === id)
     }
 

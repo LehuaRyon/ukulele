@@ -1,6 +1,18 @@
 class SongApi {
 
     static baseUrl = `${BASE_URL}/songs`
+
+    static fetchSongs() {
+        fetch(this.baseUrl)
+        .then(resp => resp.json())
+        .then(json => json.forEach(song => {
+            Song.findOrCreateBy(song)
+            // let songObject = Song.findOrCreateBy(song)
+            // songObject.renderSong()
+        }))
+        // .catch(handleError)
+    }
+
     // static, invoke on class, instance, new SongApi
     static handleSubmitSongForm(e) {
         e.preventDefault()

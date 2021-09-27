@@ -16,6 +16,20 @@ class Song {
         return this.all
     }
 
+    static findByName(title) {
+        // this.all.find(function(song) {song.title === title})
+        return this.all.find(song => song.title === title)
+    }
+
+    static findById(id) {
+        // this.all.find(function(song) {song.id === id})
+        return this.all.find(id => song.id === id)
+    }
+
+    static findOrCreateBy(song) {
+        return this.findByName(song.name) || new Song(song)
+    }
+
     renderSong() {
         // find genre where new song needs to be added
         let genreA = document.getElementById(`genre-${this.genre_id}`)
