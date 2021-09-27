@@ -79,7 +79,6 @@ class Genre {
             const lis = children.slice(1)
             lis.forEach((li) => li.remove())
         } else {
-            // debugger
             this.getSongs().forEach(song => song.renderSong());
         }
     }

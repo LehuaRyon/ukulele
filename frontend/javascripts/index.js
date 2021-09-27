@@ -163,25 +163,25 @@ function handleCreateSong(song) {
     // without this, it toggles and does not show newly added song
 }
 
-function handleDeleteSong(e) {
-    // debugger
-    songId = parseInt(e.target.dataset.id)
-    fetch(`${BASE_URL}/songs/${songId}`, {
-        method: 'DELETE',
-        headers: {
-            "Content-Type": 'application/json'
-        }
-    })
-    .then(resp => resp.json())
-    .then(json => {
-        // pessemistic - check to see if request worked before doing something on page
-        // optomistic - first do it, then make sure page works
-        e.target.parentNode.remove()
-        // it deletes it, however, when  toggle off and on again still shows it
-        alert(json.message)
-        // window.location.reload()
-    })
-}
+// function handleDeleteSong(e) {
+//     // debugger
+//     songId = parseInt(e.target.dataset.id)
+//     fetch(`${BASE_URL}/songs/${songId}`, {
+//         method: 'DELETE',
+//         headers: {
+//             "Content-Type": 'application/json'
+//         }
+//     })
+//     .then(resp => resp.json())
+//     .then(json => {
+//         // pessemistic - check to see if request worked before doing something on page
+//         // optomistic - first do it, then make sure page works
+//         e.target.parentNode.remove()
+//         // it deletes it, however, when  toggle off and on again still shows it
+//         alert(json.message)
+//         // window.location.reload()
+//     })
+// }
 
 function handleEditSong(e) {
     const li = e.target.parentNode

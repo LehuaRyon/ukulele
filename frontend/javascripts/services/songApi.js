@@ -10,7 +10,11 @@ class SongApi {
             // let songObject = Song.findOrCreateBy(song)
             // songObject.renderSong()
         }))
-        // .catch(handleError)
+        // .catch(this.handleError)
+    }
+
+    static handleError(error) {
+        alert(error)
     }
 
     // static, invoke on class, instance, new SongApi
@@ -45,5 +49,27 @@ class SongApi {
             const product = new Product(json)
             product.renderSong()
         })
+    }
+
+    static handleDeleteSong(e) {
+        // debugger
+        const songId = parseInt(e.target.dataset.id)
+        // debugger
+        fetch(`${this.baseUrl}/${songId}`, {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            // pessemistic - check to see if request worked before doing something on page
+            // optomistic - first do it, then make sure page works
+            e.target.parentNode.remove()
+            // it deletes it, however, when  toggle off and on again still shows it
+            alert(json.message)
+            // window.location.reload()
+        })
+        // .catch(this.handleError)
     }
 }

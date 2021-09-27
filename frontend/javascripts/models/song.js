@@ -52,7 +52,7 @@ class Song {
         genreA.parentNode.appendChild(li)
         // advantage of dataset attributes are quick way to set important info on elements
         const deleteButton = document.querySelector(`button.delete-button[data-id='${this.id}']`)
-        deleteButton.addEventListener("click", (e) => handleDeleteSong(e))
+        deleteButton.addEventListener("click", (e) => SongApi.handleDeleteSong(e))
 
         const editButton = document.querySelector(`button.edit-button[data-id='${this.id}']`)
         editButton.addEventListener("click", (e) => handleEditSong(e))
