@@ -53,7 +53,7 @@ function showForm() {
     // debugger
     // songFormDiv.firstElementChild.addEventListener("submit", (e) => handleSubmitSongForm(e))
     const songForm = document.getElementById("song-form")
-    songForm.addEventListener("submit", (e) => handleSubmitSongForm(e))
+    songForm.addEventListener("submit", (e) => SongApi.handleSubmitSongForm(e))
 }
 
 // function fetchGenres() {
@@ -122,34 +122,34 @@ function renderSong(song, genreId) {
     editButton.addEventListener("click", (e) => handleEditSong(e))
 }
 
-function handleSubmitSongForm(e) {
-    e.preventDefault()
-    const songTitle = document.getElementById("input-title")
-    const songArtist = document.getElementById("input-artist")
-    const songImage = document.getElementById("input-image")
-    const songChords = document.getElementById("input-chords")
-    const songGenre = document.getElementById("input-genre")
-    // packaged data I need:
-    const songObject = {
-        title: songTitle.value,
-        artist: songArtist.value,
-        image: songImage.value,
-        chords: songChords.value,
-        genre_id: songGenre.value
-    }
-    // where to send data and how:
-    // const configObj = {}
-    fetch(`${BASE_URL}/songs`, {
-        method: 'POST',
-        headers: {
-            "Content-Type": 'application/json'
-        },
-        // json class has method of stringify
-        body: JSON.stringify(songObject)
-    })
-    .then(resp => resp.json())
-    .then(json => handleCreateSong(json))
-}
+// function handleSubmitSongForm(e) {
+//     e.preventDefault()
+//     const songTitle = document.getElementById("input-title")
+//     const songArtist = document.getElementById("input-artist")
+//     const songImage = document.getElementById("input-image")
+//     const songChords = document.getElementById("input-chords")
+//     const songGenre = document.getElementById("input-genre")
+//     // packaged data I need:
+//     const songObject = {
+//         title: songTitle.value,
+//         artist: songArtist.value,
+//         image: songImage.value,
+//         chords: songChords.value,
+//         genre_id: songGenre.value
+//     }
+//     // where to send data and how:
+//     // const configObj = {}
+//     fetch(`${BASE_URL}/songs`, {
+//         method: 'POST',
+//         headers: {
+//             "Content-Type": 'application/json'
+//         },
+//         // json class has method of stringify
+//         body: JSON.stringify(songObject)
+//     })
+//     .then(resp => resp.json())
+//     .then(json => handleCreateSong(json))
+// }
 
 function handleCreateSong(song) {
     // genres on page first

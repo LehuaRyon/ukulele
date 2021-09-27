@@ -1,7 +1,9 @@
 class GenreApi {
+
+    static baseUrl = `${BASE_URL}/genres`
     // responsible for retrieving data
     static fetchGenres() {
-        fetch(`${BASE_URL}/genres`)
+        fetch(this.baseUrl)
         .then(resp => resp.json())
         // .then(json => renderGenres(json)), json comes back an array, turn into javascript objects
         // .then(json => json.forEach(genre => new Genre(genre)))
