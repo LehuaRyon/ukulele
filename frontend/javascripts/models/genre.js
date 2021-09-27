@@ -65,13 +65,22 @@ class Genre {
         // a.href = "#"
         a.href = "javascript:void(0)"
         // instead of #, this way the page does not scroll to top when genre is clicked
-        a.addEventListener("click", (e) => renderSongs(e, this))
+        a.addEventListener("click", (e) => this.renderSongs(e))
         h2.appendChild(a)
         ul.appendChild(h2)
     }
 
     // for each genre, render the songs = instance
-    renderSongs(genre) {
-        return genre
+    renderSongs(e) {
+        const nextLiSibling = e.target.nextSibling
+        if (nextLiSibling) {
+            // logic for toggling
+            const children = Array.from(e.target.parentNode.children)
+            const lis = children.slice(1)
+            lis.forEach((li) => li.remove())
+        } else {
+            // debugger
+            this.getSongs().forEach(song => song.renderSong());
+        }
     }
 }

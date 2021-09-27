@@ -83,19 +83,19 @@ function showForm() {
 // }
 
 
-function renderSongs(e, genre) {
-    // debugger
-    const nextLiSibling = e.target.nextSibling
-    if (nextLiSibling) {
-        // logic for toggling
-        const children = Array.from(e.target.parentNode.children)
-        const lis = children.slice(1)
-        lis.forEach((li) => li.remove())
-    } else {
-        // debugger
-        genre.getSongs().forEach(song => song.renderSong());
-    }
-}
+// function renderSongs(e, genre) {
+//     // debugger
+//     const nextLiSibling = e.target.nextSibling
+//     if (nextLiSibling) {
+//         // logic for toggling
+//         const children = Array.from(e.target.parentNode.children)
+//         const lis = children.slice(1)
+//         lis.forEach((li) => li.remove())
+//     } else {
+//         // debugger
+//         genre.getSongs().forEach(song => song.renderSong());
+//     }
+// }
 
 // function renderSong(song, genreId) {
 //     const a = document.getElementById(`genre-${genreId}`)
