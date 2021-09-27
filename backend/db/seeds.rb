@@ -9,6 +9,27 @@
 Genre.destroy_all
 Song.destroy_all
 
+# alternative = Genre.create(name: "Alternative")
+# blues = Genre.create(name: "Blues")
+# comedy = Genre.create(name: "Comedy")
+# country = Genre.create(name: "Country")
+# disco = Genre.create(name: "Disco")
+# electronic = Genre.create(name: "Electronic")
+# folk = Genre.create(name: "Folk")
+# hiphop = Genre.create(name: "Hip Hop")
+# indie = Genre.create(name: "Indie")
+# jazz = Genre.create(name: "Jazz")
+# latin = Genre.create(name: "Latin")
+# metal = Genre.create(name: "Metal")
+# new_age = Genre.create(name: "New Age")
+# pop = Genre.create(name: "Pop")
+# reggae = Genre.create(name: "Reggae")
+# religious = Genre.create(name: "Religious")
+# rnb = Genre.create(name: "R&B")
+# rock = Genre.create(name: "Rock")
+# soundtrack = Genre.create(name: "Soundtrack")
+# world = Genre.create(name: "World")
+
 pop = Genre.create(name: "Pop")
 rnb = Genre.create(name: "R&B")
 indie = Genre.create(name: "Indie")

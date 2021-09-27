@@ -152,16 +152,16 @@ document.addEventListener("DOMContentLoaded", () => {
 //     .then(json => handleCreateSong(json))
 // }
 
-function handleCreateSong(song) {
-    // genres on page first
-    // prepare new song and append to page
-    renderSong(song, song.genre.id)
-    const songForm = document.getElementById("song-form")
-    songForm.reset()
-    // debugger
-    // window.location.reload()
-    // without this, it toggles and does not show newly added song
-}
+// function handleCreateSong(song) {
+//     // genres on page first
+//     // prepare new song and append to page
+//     renderSong(song, song.genre.id)
+//     const songForm = document.getElementById("song-form")
+//     songForm.reset()
+//     // debugger
+//     // window.location.reload()
+//     // without this, it toggles and does not show newly added song
+// }
 
 // function handleDeleteSong(e) {
 //     // debugger
