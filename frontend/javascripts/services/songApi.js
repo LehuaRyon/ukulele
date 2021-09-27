@@ -28,6 +28,10 @@ class SongApi {
             body: JSON.stringify(songObject)
         })
         .then(resp => resp.json())
-        .then(json => handleCreateSong(json))
+        // .then(json => handleCreateSong(json))
+        .then(json => {
+            const product = new Product(json)
+            product.renderSong()
+        })
     }
 }
