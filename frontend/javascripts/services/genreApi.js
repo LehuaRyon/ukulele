@@ -6,10 +6,12 @@ class GenreApi {
         // .then(json => renderGenres(json)), json comes back an array, turn into javascript objects
         // .then(json => json.forEach(genre => new Genre(genre)))
         // .then(json => {debugger})
-        .then(json => json.forEach(genre => Genre.findOrCreateBy(genre)))
+        .then(json => json.forEach(genre => {
+            Genre.findOrCreateBy(genre)
+            Genre.renderGenre(genre)
+        }))
         // .catch(handleError)
-    
-        // Genre.renderGenres()
+        ul.innerHTML += `<h1 id='genres-header'>Genres</h1>`
     }
 
     // static handleError(error) {

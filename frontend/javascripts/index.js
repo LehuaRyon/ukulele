@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // fetchGenres()
     GenreApi.fetchGenres()
-    Genre.renderGenres()
-
+    // Genre.renderGenres()
     showForm()
 })
 
@@ -62,7 +61,7 @@ function showForm() {
 //     fetch(`${BASE_URL}/genres`)
 //     .then(resp => resp.json())
 //     .then(json => renderGenres(json))
-//     // .catch(handleError)
+    // .catch(handleError)
 // }
 
 // function renderGenres(genres) {
@@ -75,9 +74,9 @@ function showForm() {
 //     const a = document.createElement("a")
 //     a.id = `genre-${genre.id}`
 //     a.innerText = genre.name
-//     // a.href = "#"
+    // a.href = "#"
 //     a.href = "javascript:void(0)"
-//     // instead of #, this way the page does not scroll to top when genre is clicked
+    // instead of #, this way the page does not scroll to top when genre is clicked
 //     a.addEventListener("click", (e) => renderSongs(e, genre))
 //     h2.appendChild(a)
 //     ul.appendChild(h2)

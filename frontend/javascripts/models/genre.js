@@ -28,13 +28,12 @@ class Genre {
         return this.findByName(genre.name) || new Genre(genre)
     }
 
-    // static renderGenres(genres) {
-    static renderGenres() {
-        ul.innerHTML += `<h1 id='genres-header'>Genres</h1>`
+    // static renderGenres() {
+        // ul.innerHTML += `<h1 id='genres-header'>Genres</h1>`
         // debugger
-        this.all.forEach(genre => this.renderGenre(genre));
+        // this.all.forEach(genre => this.renderGenre(genre));
         // dont forget the reciever of the function, Genre
-    }
+    // }
 
     static renderGenre(genre) {
         // debugger
