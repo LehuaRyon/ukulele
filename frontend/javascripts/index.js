@@ -183,60 +183,60 @@ document.addEventListener("DOMContentLoaded", () => {
 //     })
 // }
 
-function handleEditSong(e) {
-    const li = e.target.parentNode
-    // debugger
-        let titleContent = li.querySelector(".card-title").textContent
-        const titleValue = document.getElementById("input-title")
-        titleValue.value = titleContent
+// function handleEditSong(e) {
+//     const li = e.target.parentNode
+//     // debugger
+//         let titleContent = li.querySelector(".card-title").textContent
+//         const titleValue = document.getElementById("input-title")
+//         titleValue.value = titleContent
     
-        let artistContent = li.querySelector(".card-artist").textContent
-        const artistValue = document.getElementById("input-artist")
-        artistValue.value = artistContent
-        // debugger
-        let imageContent = li.querySelector(".card-image").src
-        const imageValue = document.getElementById("input-image")
-        imageValue.value = imageContent
+//         let artistContent = li.querySelector(".card-artist").textContent
+//         const artistValue = document.getElementById("input-artist")
+//         artistValue.value = artistContent
+//         // debugger
+//         let imageContent = li.querySelector(".card-image").src
+//         const imageValue = document.getElementById("input-image")
+//         imageValue.value = imageContent
         
-        let chordsContent = li.querySelector(".card-chords").href
-        const chordsValue = document.getElementById("input-chords")
-        chordsValue.value = chordsContent
-        // debugger
-        let genreContent = e.target.parentNode.parentNode.firstElementChild.dataset.genreId
-        const genreValue = document.getElementById("input-genre")
-        genreValue.value = genreContent
-        // debugger
-        window.scrollTo(0, 0)
+//         let chordsContent = li.querySelector(".card-chords").href
+//         const chordsValue = document.getElementById("input-chords")
+//         chordsValue.value = chordsContent
+//         // debugger
+//         let genreContent = e.target.parentNode.parentNode.firstElementChild.dataset.genreId
+//         const genreValue = document.getElementById("input-genre")
+//         genreValue.value = genreContent
+//         // debugger
+//         window.scrollTo(0, 0)
 
-        const songId = e.target.dataset.id
-        formButton = document.getElementById("create-button")
-        formButton.addEventListener('click', (e) => {
-            e.preventDefault()
-            fetch(`${BASE_URL}/songs/${songId}`, {
-                method: "PATCH",
-                headers: {"Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                title: titleValue.value,
-                artist: artistValue.value,
-                image: imageValue.value,
-                chords: chordsValue.value,
-                genre_id: genreValue.value
-            })
-        })
-                .then(resp => resp.json())
-                .then(json => {
-                    // debugger
-                    handleCreateSong(json)
-                })
-                // .catch(error => alert(error))
-                // .then(() => location.reload(), )
-                // debugger
-        })
-        // deletes song from last genre location
-        // defined above: const li = e.target.parentNode        
-        li.remove()
-}
+//         const songId = e.target.dataset.id
+//         formButton = document.getElementById("create-button")
+//         formButton.addEventListener('click', (e) => {
+//             e.preventDefault()
+//             fetch(`${BASE_URL}/songs/${songId}`, {
+//                 method: "PATCH",
+//                 headers: {"Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 title: titleValue.value,
+//                 artist: artistValue.value,
+//                 image: imageValue.value,
+//                 chords: chordsValue.value,
+//                 genre_id: genreValue.value
+//             })
+//         })
+//                 .then(resp => resp.json())
+//                 .then(json => {
+//                     // debugger
+//                     handleCreateSong(json)
+//                 })
+//                 // .catch(error => alert(error))
+//                 // .then(() => location.reload(), )
+//                 // debugger
+//         })
+//         // deletes song from last genre location
+//         // defined above: const li = e.target.parentNode        
+//         li.remove()
+// }
 
 // the toggle of a genre is not updating the changes of create, edit song or delete song
     // should i just take away toggling feature completely to avoid this?

@@ -55,7 +55,7 @@ class Song {
         deleteButton.addEventListener("click", (e) => SongApi.handleDeleteSong(e))
 
         const editButton = document.querySelector(`button.edit-button[data-id='${this.id}']`)
-        editButton.addEventListener("click", (e) => handleEditSong(e))
+        editButton.addEventListener("click", (e) => SongApi.handleEditSong(e))
         // add the song
     }
 

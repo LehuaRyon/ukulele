@@ -46,11 +46,67 @@ class SongApi {
         .then(resp => resp.json())
         // .then(json => handleCreateSong(json))
         .then(json => {
-            const product = new Song(json)
-            product.renderSong()
+            const song = new Song(json)
+            song.renderSong()
             const songForm = document.getElementById("song-form")
             songForm.reset()
         })
+    }
+
+    static handleEditSong(e) {
+        const li = e.target.parentNode
+        // debugger
+            let titleContent = li.querySelector(".card-title").textContent
+            const titleValue = document.getElementById("input-title")
+            titleValue.value = titleContent
+        
+            let artistContent = li.querySelector(".card-artist").textContent
+            const artistValue = document.getElementById("input-artist")
+            artistValue.value = artistContent
+            // debugger
+            let imageContent = li.querySelector(".card-image").src
+            const imageValue = document.getElementById("input-image")
+            imageValue.value = imageContent
+            
+            let chordsContent = li.querySelector(".card-chords").href
+            const chordsValue = document.getElementById("input-chords")
+            chordsValue.value = chordsContent
+            // debugger
+            let genreContent = e.target.parentNode.parentNode.firstElementChild.dataset.genreId
+            const genreValue = document.getElementById("input-genre")
+            genreValue.value = genreContent
+            // debugger
+            window.scrollTo(0, 0)
+    
+            const songId = e.target.dataset.id
+            const formButton = document.getElementById("create-button")
+            formButton.addEventListener('click', (e) => {
+                e.preventDefault()
+                fetch(`${BASE_URL}/songs/${songId}`, {
+                    method: "PATCH",
+                    headers: {"Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    title: titleValue.value,
+                    artist: artistValue.value,
+                    image: imageValue.value,
+                    chords: chordsValue.value,
+                    genre_id: genreValue.value
+                })
+            })
+                    .then(resp => resp.json())
+                    .then(json => {
+                        // debugger
+                        const song = new Song(json)
+                        song.renderSong()
+                    })
+                    // .catch(error => alert(error))
+                    // .then(() => location.reload(), )
+                    // debugger
+            })
+            // deletes song from last genre location
+            // defined above: const li = e.target.parentNode        
+            li.remove()
     }
 
     static handleDeleteSong(e) {
