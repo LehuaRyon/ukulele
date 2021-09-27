@@ -35,7 +35,7 @@ class Song {
         let genreA = document.getElementById(`genre-${this.genre_id}`)
         // make structure for Song
         const li = document.createElement("li")
-        genreA.dataset.genreId = genreId
+        genreA.dataset.genreId = this.genre_id
         li.innerHTML = `
         <img class="card-image" src=${this.image} height="200" width="250">
         <br>
