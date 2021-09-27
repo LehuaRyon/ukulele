@@ -92,35 +92,35 @@ function renderSongs(e, genre) {
         lis.forEach((li) => li.remove())
     } else {
         // debugger
-        genre.songs.forEach(song => renderSong(song, genre.id));
+        genre.getSongs().forEach(song => song.renderSong());
     }
 }
 
-function renderSong(song, genreId) {
-    const a = document.getElementById(`genre-${genreId}`)
-    const li = document.createElement("li")
-    a.dataset.genreId = genreId
-    li.innerHTML = `
-    <img class="card-image" src=${song.image} height="200" width="250">
-    <br>
-    <strong class="card-title">${song.title}</strong>
-    <br>
-    <span class="card-artist">${song.artist}</span>
-    <br>
-    <a class="card-chords" href=${song.chords}>Ukulele Chords</a>
-    <br>
-    <button class="edit-button" data-id="${song.id}">Edit</button>
-    <button class="delete-button" data-id="${song.id}">Delete</button>
-    <br><br>
-    `
-    a.parentNode.appendChild(li)
-    // advantage of dataset attributes are quick way to set important info on elements
-    const deleteButton = document.querySelector(`button.delete-button[data-id='${song.id}']`)
-    deleteButton.addEventListener("click", (e) => handleDeleteSong(e))
+// function renderSong(song, genreId) {
+//     const a = document.getElementById(`genre-${genreId}`)
+//     const li = document.createElement("li")
+//     a.dataset.genreId = genreId
+//     li.innerHTML = `
+//     <img class="card-image" src=${song.image} height="200" width="250">
+//     <br>
+//     <strong class="card-title">${song.title}</strong>
+//     <br>
+//     <span class="card-artist">${song.artist}</span>
+//     <br>
+//     <a class="card-chords" href=${song.chords}>Ukulele Chords</a>
+//     <br>
+//     <button class="edit-button" data-id="${song.id}">Edit</button>
+//     <button class="delete-button" data-id="${song.id}">Delete</button>
+//     <br><br>
+//     `
+//     a.parentNode.appendChild(li)
+//     // advantage of dataset attributes are quick way to set important info on elements
+//     const deleteButton = document.querySelector(`button.delete-button[data-id='${song.id}']`)
+//     deleteButton.addEventListener("click", (e) => handleDeleteSong(e))
 
-    const editButton = document.querySelector(`button.edit-button[data-id='${song.id}']`)
-    editButton.addEventListener("click", (e) => handleEditSong(e))
-}
+//     const editButton = document.querySelector(`button.edit-button[data-id='${song.id}']`)
+//     editButton.addEventListener("click", (e) => handleEditSong(e))
+// }
 
 // function handleSubmitSongForm(e) {
 //     e.preventDefault()

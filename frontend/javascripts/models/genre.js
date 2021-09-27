@@ -5,7 +5,7 @@ class Genre {
         // destructure arguments
         this.name = name
         this.id = id
-        this.songs = songs
+        // this.songs = songs
         Genre.all.push(this)
     }
 
@@ -48,6 +48,13 @@ class Genre {
     //     h2.appendChild(a)
     //     ul.appendChild(h2)
     // }
+
+    // cannot be class method, static, bc it would not now which genre referring to
+    // has to be instance, call it on one genre
+    getSongs() {
+        // this is genre method is invoked on
+        return Song.all.filter(song => this.id === song.genre_id)
+    }
 
     renderGenre() {
         // debugger
