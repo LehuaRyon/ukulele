@@ -117,6 +117,9 @@ class SongApi {
             // defined above: const li = e.target.parentNode        
             // debugger
             li.remove()
+            const song = Song.findById(parseInt(e.target.dataset.id))
+            const songLocationInAll = Song.all.indexOf(song)
+            Song.all.splice(songLocationInAll, 1)
     }
 
     static handleDeleteSong(e) {
