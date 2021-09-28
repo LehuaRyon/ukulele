@@ -99,13 +99,23 @@ class SongApi {
                         // debugger
                         const song = new Song(json)
                         song.renderSong()
+                        const songForm = document.getElementById("song-form")
+                        songForm.reset()
                     })
                     // .catch(error => alert(error))
                     // .then(() => location.reload(), )
                     // debugger
             })
+            // debugger
+            // const previousGenreOwnerId = parseInt(li.parentNode.firstElementChild.dataset.genreId)
+            // const previousGenreOwner = Genre.findById(previousGenreOwnerId)
+            // const a = li.parentNode.firstElementChild
+            // li.remove()
+            // a.addEventListener("click", (e) => previousGenreOwner.renderSongs(e))
+
             // deletes song from last genre location
             // defined above: const li = e.target.parentNode        
+            // debugger
             li.remove()
     }
 

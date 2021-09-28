@@ -21,7 +21,7 @@ class Genre {
 
     static findById(id) {
         // this.all.find(function(genre) {genre.id === id})
-        return this.all.find(id => genre.id === id)
+        return this.all.find(genre => genre.id === id)
     }
 
     static findOrCreateBy(genre) {
