@@ -6,16 +6,25 @@ html {
 }
 
 body {
-    padding: 1rem 1 rem 2 rem 1 rem;
+    padding: 1 rem 1 rem 2 rem 1 rem;
 }
 
 .hide {
     display: none;
 }
 
+/* @media (min-width: 768px) {
+  .navbar.navbar-default .navbar-nav {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar.navbar-default .navbar-nav > li {
+    display: inline-block;
+    float: none
+  }
+} */
 
-
-.bd-placeholder-img {
+/* .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
     -webkit-user-select: none;
@@ -28,9 +37,9 @@ body {
     .bd-placeholder-img-lg {
       font-size: 3.5rem;
     }
-  }
+  } */
   
-.jumbotron {
+/* .jumbotron {
     padding-top: 3rem;
     padding-bottom: 3rem;
     margin-bottom: 0;
@@ -53,7 +62,7 @@ body {
   
   .jumbotron .container {
     max-width: 40rem;
-  }
+  } */
   
   footer {
     padding-top: 3rem;
