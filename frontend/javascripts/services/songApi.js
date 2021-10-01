@@ -76,7 +76,9 @@ class SongApi {
             const genreValue = document.getElementById("input-genre")
             genreValue.value = genreContent
             // debugger
-            window.scrollTo(0, 170)
+            const songForm = document.getElementById("song-form")
+            songForm.scrollIntoView();
+            // window.scrollTo(0, 170)
     
             const songId = e.target.dataset.id
             const formButton = document.getElementById("create-button")
