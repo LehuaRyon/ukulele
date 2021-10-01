@@ -13,10 +13,6 @@ class SongApi {
         // .catch(this.handleError)
     }
 
-    static handleError(error) {
-        alert(error)
-    }
-
     // static, invoke on class, instance, new SongApi
     static handleSubmitSongForm(e) {
         e.preventDefault()
@@ -151,4 +147,13 @@ class SongApi {
         })
         // .catch(this.handleError)
     }
+
+    // static handleError(error) {
+    //     flash().innerText = error
+    //     flash().classList.remove("hide")
+    //     setTimeout(() => {
+    //         flash().classList.innerText = ""
+    //         flash().classList.add("hide")
+    //     }, 5000)
+    // }
 }

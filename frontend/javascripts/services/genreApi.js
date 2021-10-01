@@ -21,11 +21,16 @@ class GenreApi {
             let genreObject = Genre.findOrCreateBy(genre)
             genreObject.renderGenre()
         }))
-        // .catch(handleError)
+        // .catch(this.handleError)
         ul.innerHTML += `<h1 id='genres-header'>Genres</h1>`
     }
 
     // static handleError(error) {
-    //     console.log(error)
+    //     flash().innerText = error
+    //     flash().classList.remove("hide")
+    //     setTimeout(() => {
+    //         flash().classList.innerText = ""
+    //         flash().classList.add("hide")
+    //     }, 5000)
     // }
 }

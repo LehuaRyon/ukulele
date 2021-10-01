@@ -63,7 +63,7 @@ class Song {
         songFormDiv.innerHTML +=
         `
         <form id="song-form" style="">
-            <h3>Add a Song to Learn:</h3>
+            <h3>Add a Song to the Queue:</h3>
             <div class="form-group">
                 <label for="title">Title:</label>
                 <input class="form-control" id="input-title" type="text" name="title" value="" placeholder="Song name..." class="input-text">

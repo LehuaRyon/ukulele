@@ -6,10 +6,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* html {
-  overflow-x: initial !important;
-} */
-
 body {
     padding: 1 rem 1 rem 2 rem 1 rem;
 }
@@ -68,7 +64,7 @@ body {
 }
 
 .portion-genres {
-  height: auto%;
+  height: auto;
   padding: 2em;
   border: 1px solid rgb(145, 109, 12);
   scroll-snap-align: start;
@@ -81,4 +77,8 @@ footer {
   
 footer p {
   margin-bottom: .25rem;
+}
+
+footer.fixed-bottom, .push {
+  height: 43px;
 }
