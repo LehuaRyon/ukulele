@@ -1,6 +1,4 @@
 html {
-    background: linear-gradient(200deg, rgb(245, 115, 28), rgb(233, 203, 72));
-    background-attachment: fixed;
     height: 100%;
     min-height: 100%;
     scroll-behavior: smooth;
@@ -21,7 +19,6 @@ body {
 #main {
   overflow-x: scroll;
   overflow-y: scroll;
-  /* scroll-snap-type: y proximity; */
   height: 3000px;
 }
 
@@ -40,13 +37,11 @@ body {
 #home-image {
   height: 200px;
   width: 350px;
-  /* margin: 3% 1%; */
 }
 
 #home-image-2 {
   height: 200px;
   width: 350px;
-  /* margin: 3% 1%; */
 }
 
 .portion-home {

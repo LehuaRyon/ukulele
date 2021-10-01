@@ -28,27 +28,6 @@ class Genre {
         return this.findByName(genre.name) || new Genre(genre)
     }
 
-    // static renderGenres() {
-        // ul.innerHTML += `<h1 id='genres-header'>Genres</h1>`
-        // debugger
-        // this.all.forEach(genre => this.renderGenre(genre));
-        // dont forget the reciever of the function, Genre
-    // }
-
-    // static renderGenre(genre) {
-    //     // debugger
-    //     const h2 = document.createElement("h2")
-    //     const a = document.createElement("a")
-    //     a.id = `genre-${genre.id}`
-    //     a.innerText = genre.name
-    //     // a.href = "#"
-    //     a.href = "javascript:void(0)"
-    //     // instead of #, this way the page does not scroll to top when genre is clicked
-    //     a.addEventListener("click", (e) => renderSongs(e, genre))
-    //     h2.appendChild(a)
-    //     ul.appendChild(h2)
-    // }
-
     // cannot be class method, static, bc it would not now which genre referring to
     // has to be instance, call it on one genre
     getSongs() {

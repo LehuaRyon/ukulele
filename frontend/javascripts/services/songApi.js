@@ -101,7 +101,6 @@ class SongApi {
                         songForm.reset()
                     })
                     // .catch(error => alert(error))
-                    // .then(() => location.reload(), )
                     // debugger
             })
             // debugger

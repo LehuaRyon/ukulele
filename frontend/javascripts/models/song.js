@@ -56,7 +56,6 @@ class Song {
 
         const editButton = document.querySelector(`button.edit-button[data-id='${this.id}']`)
         editButton.addEventListener("click", (e) => SongApi.handleEditSong(e))
-        // add the song
     }
 
     static showForm() {
@@ -109,9 +108,6 @@ class Song {
             <button id="create-button" type="submit" class="btn btn-primary">Submit Song</button>
         </form>
         `
-
-        // debugger
-        // songFormDiv.firstElementChild.addEventListener("submit", (e) => handleSubmitSongForm(e))
         const songForm = document.getElementById("song-form")
         songForm.addEventListener("submit", (e) => SongApi.handleSubmitSongForm(e))
     }
