@@ -8,36 +8,49 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/index.css">
 </head>
-<body>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          <img src="images/ukulele-icon.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-          <strong>Ukulele Song Lineup</strong>
-        </a>
-            <ul class="nav justify-content-end">
-              <li class="nav-item">
-                <a class="nav-link" id="home" href="#home-portion">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="purpose" href="#purpose-portion">Purpose</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#form-portion">Add A Song To Learn!</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="genres" href="#genres-portion">Genres</a>
-              </li>
+<body id="top">
+    <div id="main">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+            <img src="images/ukulele-icon.png" alt="ukulele icon image" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            <strong>Ukulele Song Lineup</strong>
+            </a>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home" href="#home-portion">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="add-song"href="#add-song-portion">Add A Song To Learn!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="genres" href="#genres-portion">Genres</a>
+                    </li>
+                </ul>
+        </nav>
+        <div class="hide" id="flash"></div>
+        <h1 class="text-center">Ukulele Song Lineup</h1>
+        <div class="portion" id="home-portion">
+            <div class="left md-6" id="home-image-div">
+                <img id="home-image" src="images/ukulele-home.jpg" alt="ukulele home image">
+                <br>
+                <img id="home-image-2" src="images/ukulele-home-2.png" alt="ukulele home image">
+            </div>
+            <div class="right md-6" id="home-content-div">
+                <h2>Learn Songs on the Ukulele!</h2>
+                <p>Keep track of all the songs you would like to learn on the ukulele in once place!  Each song will be categorized by the genre it belongs to.  Feel free to add, edit, and delete any the songs as you wish!  The purpose of this application is to keep track of songs you would like to learn in the future, but also refer back chords when needed.</p>
+            </div>
+        </div>
+        <div class="portion" id="add-song-portion"></div>
+        <div class="portion" id="genres-portion"></div>
+
+        <div id="song-form-div">
+
+        </div>
+        <div id="list">
+            <ul id="genres-list">
+
             </ul>
-      </nav>
-    
-    <h1>Learn Songs on the Ukulele!</h1>
-    <div id="song-form-div">
-
-    </div>
-    <div id="list">
-        <ul id="genres-list">
-
-        </ul>
+        </div>
     </div>
     <script src="javascripts/global.js"></script>
     <script src="javascripts/models/genre.js"></script>
