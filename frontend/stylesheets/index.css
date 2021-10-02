@@ -12,6 +12,7 @@ body {
     background-image: url("https://www.musikalessons.com/blog/wp-content/uploads/2017/05/uke-on-stand.jpg");
     background-size: cover;
     background-repeat: repeat;
+    color:rgb(94, 71, 9);
 }
 
 .hide {
@@ -54,21 +55,21 @@ body {
 .portion-home {
   height: 16%;
   padding: 2em;
-  border: 1px solid rgb(145, 109, 12);
+  border: 1px solid rgb(94, 71, 9);
   scroll-snap-align: start;
 }
 
 .portion-add-song {
   height: 20%;
   padding: 2em;
-  border: 1px solid rgb(145, 109, 12);
+  border: 1px solid rgb(94, 71, 9);
   scroll-snap-align: start;
 }
 
 .portion-genres {
   height: auto;
   padding: 2em;
-  border: 1px solid rgb(145, 109, 12);
+  border: 1px solid rgb(94, 71, 9);
   scroll-snap-align: start;
 }
 
