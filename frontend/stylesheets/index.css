@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Varela+Round&display=swap');
+
 html {
     height: 100%;
     min-height: 100%;
@@ -5,7 +7,11 @@ html {
 }
 
 body {
+    font-family: 'Varela Round', sans-serif;
     padding: 1 rem 1 rem 2 rem 1 rem;
+    background-image: url("https://www.musikalessons.com/blog/wp-content/uploads/2017/05/uke-on-stand.jpg");
+    background-size: cover;
+    background-repeat: repeat;
 }
 
 .hide {
@@ -40,12 +46,13 @@ body {
 }
 
 #home-image-2 {
-  height: 200px;
-  width: 350px;
+  height: 420px;
+  width: 620px;
+  /* margin: auto; */
 }
 
 .portion-home {
-  height: 15%;
+  height: 16%;
   padding: 2em;
   border: 1px solid rgb(145, 109, 12);
   scroll-snap-align: start;
