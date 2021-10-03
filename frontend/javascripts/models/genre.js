@@ -1,11 +1,10 @@
 class Genre {
     static all = []
 
-    constructor({name, id, songs = []}){
+    constructor({name, id}){
         // destructure arguments
         this.name = name
         this.id = id
-        // this.songs = songs
         Genre.all.push(this)
     }
 

@@ -1,5 +1,4 @@
 class SongsController < ApplicationController
-  # before_action :set_song, only: [:show, :update, :destroy]
 
   def index
     songs = Song.all
@@ -24,7 +23,6 @@ class SongsController < ApplicationController
     song = Song.find(params[:id])
     if song.update(song_params)
       render json: song
-      # render json: song, {message: "Song '#{song.title}' successfully updated!"}
     else
       render json: song.errors, status: :unprocessable_entity
     end
@@ -40,10 +38,6 @@ class SongsController < ApplicationController
   end
 
   private
-  
-    # def set_song
-    #   song = Song.find(params[:id])
-    # end
 
     def song_params
       params.require(:song).permit(:title, :artist, :image, :chords, :genre_id)

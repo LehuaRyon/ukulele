@@ -42,7 +42,7 @@ class SongApi {
         .then(resp => resp.json())
         // .then(json => handleCreateSong(json))
         .then(json => {
-            alert(json.message)
+            // alert(json.message)
             const song = new Song(json)
             song.renderSong()
             const songForm = document.getElementById("song-form")
