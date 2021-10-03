@@ -61,4 +61,5 @@ class Genre {
             this.getSongs().forEach(song => song.renderSong());
         }
     }
+
 }

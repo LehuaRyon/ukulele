@@ -42,10 +42,12 @@ class SongApi {
         .then(resp => resp.json())
         // .then(json => handleCreateSong(json))
         .then(json => {
+            alert(json.message)
             const song = new Song(json)
             song.renderSong()
             const songForm = document.getElementById("song-form")
             songForm.reset()
+            
         })
     }
 
@@ -77,7 +79,7 @@ class SongApi {
             // window.scrollTo(0, 170)
     
             const songId = e.target.dataset.id
-            const formButton = document.getElementById("create-button")
+            const formButton = document.getElementById("update-button")
             formButton.addEventListener('click', (e) => {
                 e.preventDefault()
                 fetch(`${BASE_URL}/songs/${songId}`, {
@@ -147,12 +149,12 @@ class SongApi {
         // .catch(this.handleError)
     }
 
-    // static handleError(error) {
-    //     flash().innerText = error
-    //     flash().classList.remove("hide")
-    //     setTimeout(() => {
-    //         flash().classList.innerText = ""
-    //         flash().classList.add("hide")
-    //     }, 5000)
-    // }
+    static handleError(error) {
+        flash().innerText = error
+        flash().classList.remove("hide")
+        setTimeout(() => {
+            flash().classList.innerText = ""
+            flash().classList.add("hide")
+        }, 5000)
+    }
 }

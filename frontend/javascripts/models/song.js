@@ -37,7 +37,7 @@ class Song {
         const li = document.createElement("li")
         genreA.dataset.genreId = this.genre_id
         li.innerHTML = `
-        <img class="card-image" src=${this.image} height="200" width="250">
+        <img class="card-image" src=${this.image} height="220" width="250">
         <br>
         <strong class="card-title">${this.title}</strong>
         <br>
@@ -105,7 +105,8 @@ class Song {
                     <option value="20">New Age</option>
                 </select>
             </div>
-            <button id="create-button" type="submit" class="btn btn-primary">Submit Song</button>
+            <button id="create-button" type="submit" class="btn btn-primary">Create Song</button>
+            <button id="update-button" type="submit" class="btn btn-primary">Update Song</button>
         </form>
         `
         const songForm = document.getElementById("song-form")

@@ -16,7 +16,7 @@ class SongsController < ApplicationController
     if song.save
       render json: song, status: :created, location: song
     else
-      render json: song.errors, status: :unprocessable_entity
+      render json: {message: "Please fill out all fields."}, status: :unprocessable_entity
     end
   end
 
