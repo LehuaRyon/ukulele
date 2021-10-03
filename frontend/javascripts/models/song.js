@@ -2,7 +2,6 @@ class Song {
     static all = []
 
     constructor({title, artist, image, chords, genre, id}){
-        // destructure arguments
         this.title = title
         this.artist = artist
         this.image = image
@@ -17,12 +16,10 @@ class Song {
     }
 
     static findByName(title) {
-        // this.all.find(function(song) {song.title === title})
         return this.all.find(song => song.title === title)
     }
 
     static findById(id) {
-        // this.all.find(function(song) {song.id === id})
         return this.all.find(song => song.id === id)
     }
 
@@ -31,9 +28,7 @@ class Song {
     }
 
     renderSong() {
-        // find genre where new song needs to be added
         let genreA = document.getElementById(`genre-${this.genre_id}`)
-        // make structure for Song
         const li = document.createElement("li")
         genreA.dataset.genreId = this.genre_id
         li.innerHTML = `
@@ -50,7 +45,7 @@ class Song {
         <br><br>
         `
         genreA.parentNode.appendChild(li)
-        // advantage of dataset attributes are quick way to set important info on elements
+        
         const deleteButton = document.querySelector(`button.delete-button[data-id='${this.id}']`)
         deleteButton.addEventListener("click", (e) => SongApi.handleDeleteSong(e))
 
