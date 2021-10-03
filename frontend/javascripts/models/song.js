@@ -83,26 +83,26 @@ class Song {
                 <label for"genres">Choose a Genre:</label>
                 <select class="form-control" id="input-genre" name="genres">
                     <option value="" selected disabled hidden>Please Select</option>
-                    <option value="1">Pop</option>
-                    <option value="2">R&B</option>
-                    <option value="3">Indie</option>
-                    <option value="4">Hip Hop</option>
-                    <option value="5">Country</option>
-                    <option value="6">Rock</option>
-                    <option value="7">Alternative</option>
-                    <option value="8">Jazz</option>
-                    <option value="9">Latin</option>
-                    <option value="10">Reggae</option>
-                    <option value="11">Electronic</option>
-                    <option value="12">Religious</option>
-                    <option value="13">Metal</option>
-                    <option value="14">Folk</option>
-                    <option value="15">Soundtrack</option>
-                    <option value="16">World</option>
-                    <option value="17">Comedy</option>
-                    <option value="18">Blues</option>
-                    <option value="19">Disco</option>
-                    <option value="20">New Age</option>
+                    <option value="1">Alternative</option>
+                    <option value="2">Blues</option>
+                    <option value="3">Comedy</option>
+                    <option value="4">Country</option>
+                    <option value="5">Disco</option>
+                    <option value="6">Electronic</option>
+                    <option value="7">Folk</option>
+                    <option value="8">Hip Hop</option>
+                    <option value="9">Indie</option>
+                    <option value="10">Jazz</option>
+                    <option value="11">Latin</option>
+                    <option value="12">Metal</option>
+                    <option value="13">New Age</option>
+                    <option value="14">Pop</option>
+                    <option value="15">Reggae</option>
+                    <option value="16">Religious</option>
+                    <option value="17">R&B</option>
+                    <option value="18">Rock</option>
+                    <option value="19">Soundtrack</option>
+                    <option value="20">World</option>
                 </select>
             </div>
             <button id="create-button" type="submit" class="btn btn-primary">Create Song</button>
