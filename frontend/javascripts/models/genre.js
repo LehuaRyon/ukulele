@@ -39,10 +39,10 @@ class Genre {
     }
 
     renderSongs(e) {
-        const nextLiSibling = e.target.nextSibling
-        if (nextLiSibling) {
-            const children = Array.from(e.target.parentNode.children)
-            const lis = children.slice(1)
+        const ifLisAfterA = e.target.nextSibling
+        if (ifLisAfterA) {
+            const aAndLis = Array.from(e.target.parentNode.children)
+            const lis = aAndLis.slice(1)
             lis.forEach((li) => li.remove())
         } else {
             this.getSongs().forEach(song => song.renderSong());
