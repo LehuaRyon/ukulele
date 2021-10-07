@@ -45,12 +45,12 @@ class Song {
         <br><br>
         `
         genreA.parentNode.appendChild(li)
-        
-        const deleteButton = document.querySelector(`button.delete-button[data-id='${this.id}']`)
-        deleteButton.addEventListener("click", (e) => SongApi.handleDeleteSong(e))
 
         const editButton = document.querySelector(`button.edit-button[data-id='${this.id}']`)
         editButton.addEventListener("click", (e) => SongApi.handleEditSong(e))
+
+        const deleteButton = document.querySelector(`button.delete-button[data-id='${this.id}']`)
+        deleteButton.addEventListener("click", (e) => SongApi.handleDeleteSong(e))
     }
 
     static showForm() {

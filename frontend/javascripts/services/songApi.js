@@ -33,11 +33,14 @@ class SongApi {
         })
         .then(resp => resp.json())
         .then(json => {
-            const song = new Song(json)
-            song.renderSong()
-            const songForm = document.getElementById("song-form")
-            songForm.reset()
-            
+            if (json.message){
+                alert(json.message)
+            } else {
+                const song = new Song(json)
+                song.renderSong()
+                const songForm = document.getElementById("song-form")
+                songForm.reset()
+            }
         })
     }
 
